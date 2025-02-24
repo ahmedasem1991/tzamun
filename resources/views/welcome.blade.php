@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
   <meta charset="utf-8">
@@ -50,30 +50,22 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <!-- <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li> -->
-          <li><a href="#contact">Contact Us</a></li>
-
+            <li class="active"><a href="">Home</a></li>
+            <li><a href="#about">{{ __('messages.about_us') }}</a></li>
+            <li><a href="#services">{{ __('messages.services') }}</a></li>
+            <li><a href="#portfolio">{{ __('messages.portfolio') }}</a></li>
+            <li><a href="#team">{{ __('messages.team') }}</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+                <!-- Language Switcher: Show Arabic if in English & Show English if in Arabic -->
+                @if(app()->getLocale() == 'en')
+                <li>
+                    <a href="{{ route('switch-language', 'ar') }}">العربية</a>
+                </li>
+                @else
+                <li>
+                    <a href="{{ route('switch-language', 'en') }}">English</a>
+                </li>
+            @endif
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -84,6 +76,8 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Welcome to TZAMUN</h1>
+      <h1>{{ __('messages.welcome') }}</h1>
+
       <h2>We are team of experts to acquire a smart solutions for your businesses.</h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
