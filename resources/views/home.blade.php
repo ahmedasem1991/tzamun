@@ -133,6 +133,7 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>{{ __('messages.partners') }}</h2>
+          {{-- <p>We help to accelerate your business velocity with our enterprise-grade software solutions and products. We provided the most powerful and adaptable digital solutions to many of the clients around the globe. See some of our satisfied clients who have unlocked many opportunities with the help of our innovatively designed website and applications.</p> --}}
         </div>
 
         <div class="row" data-aos="fade-up">
@@ -144,10 +145,26 @@
             </ul>
           </div>
         </div>
-
         <div class="row portfolio-container" data-aos="fade-up">
+          @foreach ($partners as $partner)
+            <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $partner->classification == 'website' ? 'web' : 'app' }}">
+              <div class="portfolio-wrap">
+                <img src="{{ $partner->logo }}" class="img-fluid" width="60%" alt="" style="object-fit: contain;">
+                <div class="portfolio-info">
+                  <h4>{{ $locale == 'ar' ? $partner->name_ar : $partner->name_en }}</h4>
+                  <p>{{ $locale == 'ar' ? $partner->name_ar : $partner->name_en }}</p>
+                  <div class="portfolio-links">
+                    <a href="{{ $partner->logo }}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-link"></i></a>
+                    <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          @endforeach
+       
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+
+          {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="images/srf.png" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -188,7 +205,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
 
       </div>
     </section><!-- End Portfolio Section -->

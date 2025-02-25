@@ -828,6 +828,11 @@ section {
   z-index: 1;
   background: none;
   background-color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px; 
+  width: 250px; 
 }
 
 .portfolio .portfolio-wrap::before {
@@ -1534,6 +1539,24 @@ section {
   display: flex;
   justify-content: flex-end;
 }
+
 .mr-left{
   margin-left: auto !important;
 }
+
+
+@media (max-width: 768px) {
+  .rtl-nav {
+    display: block;
+  }
+  .ltr-nav {
+    display: block;
+  }
+  .mr-left{
+    margin: auto !important;
+    }
+    .logo.mr-auto{
+      margin: auto;
+    }
+}
+
