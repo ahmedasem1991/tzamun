@@ -127,7 +127,7 @@
     </section><!-- End About Section -->
 
 
-    <!-- ======= Portfolio Section ======= -->
+    <!-- ======= Partner Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
       <div class="container">
 
@@ -211,53 +211,73 @@
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Steps Section ======= -->
-    <section id="steps" class="steps section-bg">
+    <section id="steps" class="steps">
       <div class="container">
 
-        <div class="row no-gutters">
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in">
-            <span>01</span>
-            <h4>Innovative Solution</h4>
-            <p>We focus on understanding the client’s business needs and fulfill with the “Best Fit” solution by utilizing best available technologies and practices.</p>
+        <div class="row no-gutters {{ app()->getLocale() == 'ar' ? 'text-right' : 'text-left' }}">
+          <h1 class="col-md-12 text-center">{{ __('messages.success_stories') }}</h1>
+          @foreach ($successStories as $story)
+          <div class="col-lg-6 col-md-6 content-item" data-aos="fade-in" data-aos-delay="100">
+            <span><img src="{{$story->logo}}" style="margin: auto; display: block; width:60%; min-height:130px;"></span>
+            <h4>{{ $locale == 'ar' ? $story->name_ar : $story->name_en }}</h4>
+            <p>{{ $locale == 'ar' ? $story->description_ar : $story->description_en }}</p>
           </div>
+          @endforeach
+          
 
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="100">
-            <span>02</span>
-            <h4>Upgrading Ranking</h4>
-            <p>We upgrade the ranking of our clients up to an esteem level.</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="200">
-            <span>03</span>
-            <h4>Upgrading Business</h4>
-            <p>We motivate the business upgrading from manual processes to digitized environment.</p>
-          </div>
-<!-- 
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="300">
-            <span>04</span>
-            <h4>Repellendus molestiae</h4>
-            <p>Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="400">
-            <span>05</span>
-            <h4>Sapiente Magnam</h4>
-            <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="500">
-            <span>06</span>
-            <h4>Facilis Impedit</h4>
-            <p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis sequi</p>
-          </div> -->
+        
 
         </div>
 
       </div>
     </section><!-- End Steps Section -->
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
 
-    <!-- ======= Features Section ======= -->
+        <div class="section-title" data-aos="fade-up">
+          <h2>{{ __('messages.services') }}</h2>
+          <p>{{ __('messages.services_header') }}</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bxl-react"></i></div>
+              <h4 class="title"><a href="">Enterprise Software Development</a></h4>
+              <p class="description">We provide full range of custom software development services to bring your ideas to life. Our turnkey solutions are custom-designed to fit into your enterprise software ecosystem. Anything you can dream up, from a custom desktop application to a global app, we can build it.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="bx bx-laptop"></i></div>
+              <h4 class="title"><a href="">Web Development</a></h4>
+              <p class="description">We create beautifully designed web apps precisely tailored to your situation. From providing Software as a Service to creating custom software to support your customers, our Web App team will get you up and running.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-green">
+              <div class="icon"><i class="bx bx-mobile"></i></div>
+              <h4 class="title"><a href="">Mobile Apps Development</a></h4>
+              <p class="description">Consumers spend nearly a quarter of their day on their mobile phone – and 92% of that time is spent using apps. Your app needs to be brilliantly designed and intuitive to have a shot at getting anyone’s attention.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">UI/UX</a></h4>
+              <p class="description">Good user experiences are very important to us for every software we create. By basing our software on human-centered design principles, we ensure your users get the best experience, and you get the best return on investment.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+    {{-- <!-- ======= Features Section ======= -->
     <section id="features" class="features">
       <div class="container">
 
@@ -317,54 +337,9 @@
         </div>
 
       </div>
-    </section><!-- End Features Section -->
+    </section><!-- End Features Section --> --}}
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>Services</h2>
-          <p>From startup to enterprise, the full range of engineering services your company needswith an advanced infrastructure to create large scale projects. We leverage emerging technologies to provide the best client experiences.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
-            <div class="icon-box icon-box-pink">
-              <div class="icon"><i class="bx bxl-react"></i></div>
-              <h4 class="title"><a href="">Enterprise Software Development</a></h4>
-              <p class="description">We provide full range of custom software development services to bring your ideas to life. Our turnkey solutions are custom-designed to fit into your enterprise software ecosystem. Anything you can dream up, from a custom desktop application to a global app, we can build it.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box icon-box-cyan">
-              <div class="icon"><i class="bx bx-laptop"></i></div>
-              <h4 class="title"><a href="">Web Development</a></h4>
-              <p class="description">We create beautifully designed web apps precisely tailored to your situation. From providing Software as a Service to creating custom software to support your customers, our Web App team will get you up and running.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box icon-box-green">
-              <div class="icon"><i class="bx bx-mobile"></i></div>
-              <h4 class="title"><a href="">Mobile Apps Development</a></h4>
-              <p class="description">Consumers spend nearly a quarter of their day on their mobile phone – and 92% of that time is spent using apps. Your app needs to be brilliantly designed and intuitive to have a shot at getting anyone’s attention.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box icon-box-blue">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">UI/UX</a></h4>
-              <p class="description">Good user experiences are very important to us for every software we create. By basing our software on human-centered design principles, we ensure your users get the best experience, and you get the best return on investment.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <!-- <section id="testimonials" class="testimonials">
@@ -438,14 +413,14 @@
     </section>End Testimonials Section -->
 
 
-    <!-- ======= Team Section ======= -->
+    {{-- <!-- ======= Team Section ======= -->
     <section id="team" class="team">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
           <h2>Team</h2>
           <p>TZAMUN team is comprised of industry experts who are passionate about their work, have excelled in their field, and have an extensive background in a wide variety of applications. Our team delivers a full-range of skill -sets to meet your needs up and down the stack, including strategic planners, project management professionals (PMP), and tactical specialists.
-Their telecommunication and IT intelligence supports midsize to large enterprise businesses. This group of talented professionals has been responsible for the satisfaction, retention and growth of our base of clients.</p>
+              Their telecommunication and IT intelligence supports midsize to large enterprise businesses. This group of talented professionals has been responsible for the satisfaction, retention and growth of our base of clients.</p>
         </div>
 
         <div class="row">
@@ -467,25 +442,6 @@ Their telecommunication and IT intelligence supports midsize to large enterprise
               </div>
             </div>
           </div>
-<!-- 
-          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="{{asset('images/avatar.png')}}" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Wael Samoum</h4>
-                  <span>CEO</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
           <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <img src="images/avatar.png" class="img-fluid" alt="">
@@ -525,9 +481,9 @@ Their telecommunication and IT intelligence supports midsize to large enterprise
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section><!-- End Team Section --> --}}
 
-    <!-- ======= F.A.Q Section ======= -->
+    {{-- <!-- ======= F.A.Q Section ======= -->
     <section id="faq" class="faq section-bg">
       <div class="container">
 
@@ -612,7 +568,7 @@ Their telecommunication and IT intelligence supports midsize to large enterprise
         </div>
 
       </div>
-    </section><!-- End F.A.Q Section -->
+    </section><!-- End F.A.Q Section --> --}}
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">

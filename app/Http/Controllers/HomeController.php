@@ -12,7 +12,8 @@ class HomeController extends Controller
         $about = \App\Models\AboutUs::first(); // Fetch the first About Us section
         $locale = app()->getLocale(); // Get the current language (en or ar)
         $partners = \App\Models\Partner::all(); // Fetch the first About Us section
+        $successStories = \App\Models\SuccessStory::all(); // Fetch the first About Us section
 
-        return view('home' , compact('hero', 'locale','about','partners')); // Make sure home.blade.php exists in resources/views/
+        return view('home' , compact('hero', 'locale','about','partners','successStories')); // Make sure home.blade.php exists in resources/views/
     }
 }
