@@ -41,7 +41,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex">
 
-      <div class="logo mr-auto">
+      <div class="logo {{ app()->getLocale() == 'ar' ? 'mr-left' : 'mr-auto' }}">
          
         <h1 class="text-light"><a href="#"> <img src="https://tzamun.sa/assets/images/logo.png" > </a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
@@ -49,37 +49,35 @@
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
-        <ul>
-            <li class="active"><a href="">Home</a></li>
+        <ul class="{{ app()->getLocale() == 'ar' ? 'rtl-nav' : 'ltr-nav' }}">
+            <li class="active"><a href="#">{{ __('messages.home') }}</a></li>
             <li><a href="#about">{{ __('messages.about_us') }}</a></li>
             <li><a href="#services">{{ __('messages.services') }}</a></li>
             <li><a href="#portfolio">{{ __('messages.portfolio') }}</a></li>
             <li><a href="#team">{{ __('messages.team') }}</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-                <!-- Language Switcher: Show Arabic if in English & Show English if in Arabic -->
-                @if(app()->getLocale() == 'en')
-                <li>
-                    <a href="{{ route('switch-language', 'ar') }}">العربية</a>
-                </li>
-                @else
-                <li>
-                    <a href="{{ route('switch-language', 'en') }}">English</a>
-                </li>
+            <li><a href="#contact">{{ __('messages.contact') }}</a></li>
+        
+            <!-- Language Switcher: Show Arabic if in English & Show English if in Arabic -->
+            @if(app()->getLocale() == 'en')
+                <li><a href="{{ route('switch-language', 'ar') }}">العربية</a></li>
+            @else
+                <li><a href="{{ route('switch-language', 'en') }}">English</a></li>
             @endif
         </ul>
+        
       </nav><!-- .nav-menu -->
 
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="container text-center text-md-left" data-aos="fade-up">
-      <h1>Welcome to TZAMUN</h1>
-      <h1>{{ __('messages.welcome') }}</h1>
-
-      <h2>We are team of experts to acquire a smart solutions for your businesses.</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="background: url('{{ asset('storage/' . $hero->background_image) }}') center center;  background-size: cover;
+  position: relative;">
+    <div class="container text-center {{ $locale == 'ar' ? 'text-md-right' : 'text-md-left' }}" data-aos="fade-up">
+      <h1>{{ $locale == 'ar' ? $hero->title_ar : $hero->title_en }}</h1>
+      <br>
+      <h2>{{ $locale == 'ar' ? $hero->description_ar : $hero->description_en }}</h2>
+      <a href="#about" class="btn-get-started scrollto">{{ __('messages.get_started') }}</a>
     </div>
   </section><!-- End Hero -->
 
@@ -93,25 +91,33 @@
           <div class="col-xl-6 col-lg-7" data-aos="fade-right">
           <center> <img src="tlogo.png" style=" " class="img-fluid" alt=""></center> 
           </div>
-          <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0">
-            <h3 data-aos="fade-up">About US</h3>
+          <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0 {{ app()->getLocale() == 'ar' ? 'text-right' : '' }}">
+            <h3 data-aos="fade-up">{{ __('messages.about_us') }}</h3>
             <p data-aos="fade-up">
             TZAMUN is one of the top <big>Software company. </big> We believe that technology plays vital role for growing people and businesses.That’s why we always try to help people in achieving their objectives by using best technologies and solutions.
             </p>
             <div class="icon-box" data-aos="fade-up">
+             @php if(app()->getLocale() == 'en'): @endphp
               <i class="bx bx-receipt"></i>
+              @php endif; @endphp
               <h4>Vision</h4>
               <p>Our vision is to  <big>Provide Best IT Solutions & Services </big> by developing requirements specific business software and mobile apps and eCommerce websites solutions that help people to achieve their objectives in a prompt and efficient manner.</p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              @php if(app()->getLocale() == 'en'): @endphp
               <i class="bx bx-cube-alt"></i>
+              @php endif; @endphp
+
               <h4>Mission</h4>
               <p>Our mission is to become the “Ultimate Choice of the customers as an IT Vendor” by developing business specific software, mobile apps and target oriented websites.</p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              @php if(app()->getLocale() == 'en'): @endphp
               <i class="bx bx-cube-alt"></i>
+              @php endif; @endphp
+
               <h4>Team of skilled professionals</h4>
               <p>We develop an excellent team of IT professionals to meet future challenges.</p>
             </div>

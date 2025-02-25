@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   position: relative;
   color: rgba(0, 0, 0, 0.8);
-  padding: 8px 0 12px 0;
+  padding: 8px 10px 12px 0;
   transition: 0.3s;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
@@ -337,9 +337,9 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: calc(100vh - 72px);
-  background: url("../../back.png") center center;
-  background-size: cover;
-  position: relative;
+  /* background: url("../../back.png") center center; */
+  /* background-size: cover;
+  position: relative; */
   margin-top: 72px;
   padding: 0;
 }
@@ -1518,4 +1518,22 @@ section {
   text-align: center;
   font-size: 13px;
   color: #fff;
+}
+/* Default LTR Navigation (English) */
+.ltr-nav {
+  direction: ltr;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* RTL Navigation (Arabic) */
+.rtl-nav {
+  direction: rtl;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.mr-left{
+  margin-left: auto !important;
 }

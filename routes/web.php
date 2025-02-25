@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\HomeController;
 
 use Illuminate\Support\Facades\Session;
 
@@ -17,9 +18,8 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/switch-language/{lang}', function ($lang) {
     if (in_array($lang, ['en', 'ar'])) {
