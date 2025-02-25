@@ -241,7 +241,20 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+          @foreach ($services as $service)
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+                    <div class="icon-box icon-box-pink">
+                        <div class="icon"><i class="{{ $service->icon }}"></i></div>
+                        <h4 class="title">
+                            <a href="">{{ $locale == 'ar' ? $service->title_ar : $service->title_en }}</a>
+                        </h4>
+                        <p class="description">
+                            {{ $locale == 'ar' ? $service->description_ar : $service->description_en }}
+                        </p>
+                    </div>
+                </div>
+            @endforeach
+          {{-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
             <div class="icon-box icon-box-pink">
               <div class="icon"><i class="bx bxl-react"></i></div>
               <h4 class="title"><a href="">Enterprise Software Development</a></h4>
@@ -271,7 +284,7 @@
               <h4 class="title"><a href="">UI/UX</a></h4>
               <p class="description">Good user experiences are very important to us for every software we create. By basing our software on human-centered design principles, we ensure your users get the best experience, and you get the best return on investment.</p>
             </div>
-          </div>
+          </div> --}}
 
         </div>
 
@@ -575,8 +588,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>Feel free to contact us for any inquiries or Information.</p>
+          <h2>{{ __('messages.contact') }}</h2>
+          <p>{{ __('messages.Feel_free_to_contact_us_for_any_inquiries_or_Information') }}</p>
         </div>
 
         <div class="row no-gutters justify-content-center" data-aos="fade-up">
@@ -585,7 +598,7 @@
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
+                <h4>{{ __('messages.Location:') }} </h4>
                 <p>2499, Jeddah 21451, Kingdom of Saudi Arabia</p>
               </div>
 
