@@ -1,11 +1,11 @@
 <?php
 return [
     'welcome' => 'مرحبًا بك في تزامن',
-    'about_us' => 'معلومات عنا',
+    'about_us' => 'عنّا',
     'contact' => 'اتصل بنا',
     'home' => 'الرئيسية',
     'services' => 'خدماتنا',
-    'portfolio' => 'اعمالنا',
+    'partners' => 'شركائنا',
     'team' => 'فريقنا',
     'get_started' => 'أبدا الآن',
 

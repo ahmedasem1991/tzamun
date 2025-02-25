@@ -53,7 +53,7 @@
             <li class="active"><a href="#">{{ __('messages.home') }}</a></li>
             <li><a href="#about">{{ __('messages.about_us') }}</a></li>
             <li><a href="#services">{{ __('messages.services') }}</a></li>
-            <li><a href="#portfolio">{{ __('messages.portfolio') }}</a></li>
+            <li><a href="#portfolio">{{ __('messages.partners') }}</a></li>
             <li><a href="#team">{{ __('messages.team') }}</a></li>
             <li><a href="#contact">{{ __('messages.contact') }}</a></li>
         
@@ -94,39 +94,104 @@
           <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0 {{ app()->getLocale() == 'ar' ? 'text-right' : '' }}">
             <h3 data-aos="fade-up">{{ __('messages.about_us') }}</h3>
             <p data-aos="fade-up">
-            TZAMUN is one of the top <big>Software company. </big> We believe that technology plays vital role for growing people and businesses.That’s why we always try to help people in achieving their objectives by using best technologies and solutions.
-            </p>
+              {{ $locale == 'ar' ? $about->header_ar : $about->header_en }}            </p>
             <div class="icon-box" data-aos="fade-up">
              @php if(app()->getLocale() == 'en'): @endphp
               <i class="bx bx-receipt"></i>
               @php endif; @endphp
-              <h4>Vision</h4>
-              <p>Our vision is to  <big>Provide Best IT Solutions & Services </big> by developing requirements specific business software and mobile apps and eCommerce websites solutions that help people to achieve their objectives in a prompt and efficient manner.</p>
+              <h4>{{ $locale == 'ar' ? $about->vision_ar : $about->vision_en }} </h4>
+              <p>{{ $locale == 'ar' ? $about->vision_description_ar : $about->vision_description_en }} </p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               @php if(app()->getLocale() == 'en'): @endphp
               <i class="bx bx-cube-alt"></i>
               @php endif; @endphp
+              <h4>{{ $locale == 'ar' ? $about->mission_ar : $about->mission_en }} </h4>
+              <p>{{ $locale == 'ar' ? $about->mission_description_ar : $about->mission_description_en }} </p>
+              </div>
 
-              <h4>Mission</h4>
-              <p>Our mission is to become the “Ultimate Choice of the customers as an IT Vendor” by developing business specific software, mobile apps and target oriented websites.</p>
-            </div>
-
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            {{-- <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               @php if(app()->getLocale() == 'en'): @endphp
               <i class="bx bx-cube-alt"></i>
               @php endif; @endphp
 
               <h4>Team of skilled professionals</h4>
               <p>We develop an excellent team of IT professionals to meet future challenges.</p>
-            </div>
+            </div> --}}
 
           </div>
         </div>
 
       </div>
     </section><!-- End About Section -->
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>{{ __('messages.partners') }}</h2>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="images/srf.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>SRF</h4>
+                <p>SRF</p>
+                <div class="portfolio-links">
+                  <a href="images/srf.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-link"></i></a>
+                  <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="images/etabeb.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>eTabeb</h4>
+                <p>eTabeb</p>
+                <div class="portfolio-links">
+                  <a href="images/etabeb.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-link"></i></a>
+                  <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="images/wajad.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>WAJAD</h4>
+                <p>WAJAD</p>
+                <div class="portfolio-links">
+                  <a href="images/wajad.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-link"></i></a>
+                  <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
 
     <!-- ======= Steps Section ======= -->
     <section id="steps" class="steps section-bg">
@@ -355,158 +420,6 @@
       </div>
     </section>End Testimonials Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
-          <p>We help to accelerate your business velocity with our enterprise-grade software solutions and products. We provided the most powerful and adaptable digital solutions to many of the clients around the globe. See some of our satisfied clients who have unlocked many opportunities with the help of our innovatively designed website and applications.</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="images/srf.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SRF</h4>
-                <p>SRF</p>
-                <div class="portfolio-links">
-                  <a href="images/srf.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-link"></i></a>
-                  <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="images/etabeb.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>eTabeb</h4>
-                <p>eTabeb</p>
-                <div class="portfolio-links">
-                  <a href="images/etabeb.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-link"></i></a>
-                  <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="images/wajad.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>WAJAD</h4>
-                <p>WAJAD</p>
-                <div class="portfolio-links">
-                  <a href="images/wajad.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-link"></i></a>
-                  <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-<!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-<!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-<!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-<!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-<!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-<!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
