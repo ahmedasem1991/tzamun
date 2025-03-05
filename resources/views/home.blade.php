@@ -127,89 +127,59 @@
     </section><!-- End About Section -->
 
 
-    <!-- ======= Partner Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
+   
+    <section id="portfolio" class="portfolio section-bg"> 
+       <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div id="trustedcustomers" runat="server" class="section-title text-center pb-25">
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>{{ __('messages.partners') }}</h2>
-          {{-- <p>We help to accelerate your business velocity with our enterprise-grade software solutions and products. We provided the most powerful and adaptable digital solutions to many of the clients around the globe. See some of our satisfied clients who have unlocked many opportunities with the help of our innovatively designed website and applications.</p> --}}
+                    <h3 class="title" style="color:#005e9c;font-weight:900"></h3><h3 class="title" style="color:#005e9c;font-weight:900">Our Partners</h3>
+
+
+                </div>
+            </div>
+        </div> <!-- row -->
+
+        <div class="row justify-content-center">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">    
+                    <div class="carousel-item">
+                        <div class="row d-flex flex-wrap p-5">
+                          @foreach ($partners as $i=> $partner)
+                          @if ($i>3)
+                            <div class="col-6 col-md-3 p-5"><img src="{{$partner->logo}}"  class="d-block w-100"></div>
+                          @endif
+                          @endforeach
+                        </div>
+                    </div>
+                    <div class="carousel-item active">
+                        <div class="row d-flex flex-wrap p-5">
+                          @foreach ($partners as $i=> $partner)
+                          @if ($i<4)
+                            <div class="col-6 col-md-3 p-5"><img src="{{$partner->logo}}"  class="d-block w-100"></div>
+                          @endif
+                          @endforeach
+                          
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style=" margin-right: -5%;">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        
         </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row portfolio-container" data-aos="fade-up">
-          @foreach ($partners as $partner)
-            <div class="col-lg-4 col-md-6 portfolio-item filter-{{ $partner->classification == 'website' ? 'web' : 'app' }}">
-              <div class="portfolio-wrap">
-                <img src="{{ $partner->logo }}" class="img-fluid" width="60%" alt="" style="object-fit: contain;">
-                <div class="portfolio-info">
-                  <h4>{{ $locale == 'ar' ? $partner->name_ar : $partner->name_en }}</h4>
-                  <p>{{ $locale == 'ar' ? $partner->name_ar : $partner->name_en }}</p>
-                  <div class="portfolio-links">
-                    <a href="{{ $partner->logo }}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-link"></i></a>
-                    <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          @endforeach
-       
-
-
-          {{-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="images/srf.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>SRF</h4>
-                <p>SRF</p>
-                <div class="portfolio-links">
-                  <a href="images/srf.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-link"></i></a>
-                  <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="images/etabeb.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>eTabeb</h4>
-                <p>eTabeb</p>
-                <div class="portfolio-links">
-                  <a href="images/etabeb.png" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-link"></i></a>
-                  <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="images/wajad.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>WAJAD</h4>
-                <p>WAJAD</p>
-                <div class="portfolio-links">
-                  <a href="images/wajad.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-link"></i></a>
-                  <!-- <a href="#" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> --}}
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
+    </div>
+    </section>
     <!-- ======= Steps Section ======= -->
     <section id="steps" class="steps">
       <div class="container">
@@ -218,7 +188,7 @@
           <h1 class="col-md-12 text-center">{{ __('messages.success_stories') }}</h1>
           @foreach ($successStories as $story)
           <div class="col-lg-6 col-md-6 content-item" data-aos="fade-in" data-aos-delay="100">
-            <span><img src="{{$story->logo}}" style="margin: auto; display: block; width:60%; min-height:130px;"></span>
+            <span><img src="{{$story->logo}}" style="margin: auto; display: block;"></span>
             <h4>{{ $locale == 'ar' ? $story->name_ar : $story->name_en }}</h4>
             <p>{{ $locale == 'ar' ? $story->description_ar : $story->description_en }}</p>
           </div>
@@ -241,10 +211,10 @@
         </div>
 
         <div class="row">
-          @foreach ($services as $service)
+          @foreach ($services as $i=>$service)
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
                     <div class="icon-box icon-box-pink">
-                        <div class="icon"><i class="{{ $service->icon }}"></i></div>
+                        <div class="icon" style="color:{{($i % 2 == 0)? '#28ba9b !important;' : '#1876b0 !important;'}}"><i class="{{ $service->icon }}"></i></div>
                         <h4 class="title">
                             <a href="">{{ $locale == 'ar' ? $service->title_ar : $service->title_en }}</a>
                         </h4>
@@ -290,6 +260,8 @@
 
       </div>
     </section><!-- End Services Section -->
+
+   
     {{-- <!-- ======= Features Section ======= -->
     <section id="features" class="features">
       <div class="container">
