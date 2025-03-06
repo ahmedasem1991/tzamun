@@ -577,7 +577,7 @@
               <div class="email mt-4">
                 <i class="icofont-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@ATCorp.sa</p>
+                <p>info@tzamun.sa</p>
               </div>
 
               <div class="phone mt-4">
@@ -657,7 +657,7 @@
               2499, Jeddah 21451 <br>
               Kingdom of Saudi Arabia<br><br>
                 <strong>Phone:</strong> +966126972323 - +966569756185<br>
-                <strong>Email:</strong> info@ATCorp.sa<br>
+                <strong>Email:</strong> info@tzamun.sa<br>
               </p>
               <!-- <div class="social-links mt-3">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -706,14 +706,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>ATCorp</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>tzamun</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/ -->
-        <!-- Designed by <a href="#">ATCorp</a> -->
+        <!-- Designed by <a href="#">tzamun</a> -->
       </div>
     </div>
   </footer><!-- End Footer -->
