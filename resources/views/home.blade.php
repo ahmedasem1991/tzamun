@@ -190,7 +190,7 @@
           <h1 class="col-md-12 text-center" style="margin-bottom: 25px;">{{ __('messages.success_stories') }}</h1>
           @foreach ($successStories as $i => $story)
           <div class="col-lg-6 col-md-6 content-item" style="{{ $i % 2 == 0 && app()->getLocale() == 'ar' ? 'border-left: 1px solid #d4e9e6;' : '' }} {{ $i % 2 == 0 && app()->getLocale() == 'en' ? 'border-right: 1px solid #d4e9e6;' : '' }} " data-aos="fade-in" data-aos-delay="100">
-            <span><img src="{{ asset('storage/' . $story->logo) }}" style="margin: auto; display: block;"></span>
+            <span><img src="{{ asset('storage/' . $story->logo) }}" style="margin: auto; display: block; width:80%;"></span>
             <h4>{{ $locale == 'ar' ? $story->name_ar : $story->name_en }}</h4>
             <p>{{ $locale == 'ar' ? $story->description_ar : $story->description_en }}</p>
           </div>
