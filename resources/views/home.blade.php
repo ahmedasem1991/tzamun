@@ -603,6 +603,7 @@
         <div class="row mt-5 justify-content-center" data-aos="fade-up">
           <div class="col-lg-10">
             <form action="contact-us" method="post" role="form" class="php-email-form">
+              @csrf
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="{{ __('messages.your_name') }}" data-rule="minlen:4" data-msg="{{ __('messages.min_4') }}" />
@@ -633,7 +634,7 @@
               <div class="mb-3">
                 <div class="loading">{{ __('messages.loading') }}</div>
                 <div class="error-message"></div>
-                <div class="sent-message">{{ __('messages.message_sent_thanks') }}</div>
+                <div class="sent-message">{{ __('messages.contact_success') }}</div>
               </div>
               <div class="text-center"><button type="submit">{{ __('messages.send_message') }}</button></div>
             </form>

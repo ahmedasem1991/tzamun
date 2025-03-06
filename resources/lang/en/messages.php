@@ -33,6 +33,7 @@ return [
     'send_message'=>'Send Message',
     'tzamun'=>'TZAMUN',
     'subscribe' => 'Subscribe',
-    'copy_right'=> '© Copyright tzamun. All Rights Reserved'
+    'copy_right'=> '© Copyright tzamun. All Rights Reserved',
+    'contact_success' => 'Your message has been sent successfully.'
 
 ];

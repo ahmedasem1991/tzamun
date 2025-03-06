@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactUsController;
 
 use Illuminate\Support\Facades\Session;
 
@@ -28,3 +29,5 @@ Route::get('/switch-language/{lang}', function ($lang) {
     }
     return back();
 })->name('switch-language');
+Route::post('/contact-us', [ContactUsController::class, 'store'])->name('contact-us.store');
+

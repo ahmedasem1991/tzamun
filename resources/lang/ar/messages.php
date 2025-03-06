@@ -31,7 +31,8 @@ return [
     'send_message'=>'إرسال',
     'tzamun'=>'تزامن',
     'subscribe' => 'اشتراك',
-    'copy_right'=> '© جميع الحقوق محفوظة لشركة tzamun'
+    'copy_right'=> '© جميع الحقوق محفوظة لشركة tzamun',
+    'contact_success' => 'لقد تم ارسال رسالتك بنجاح.'
 
 
     
