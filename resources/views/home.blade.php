@@ -52,9 +52,11 @@
         <ul class="{{ app()->getLocale() == 'ar' ? 'rtl-nav' : 'ltr-nav' }}">
             <li class="active"><a href="#">{{ __('messages.home') }}</a></li>
             <li><a href="#about">{{ __('messages.about_us') }}</a></li>
-            <li><a href="#services">{{ __('messages.services') }}</a></li>
             <li><a href="#portfolio">{{ __('messages.partners') }}</a></li>
-            <li><a href="#team">{{ __('messages.team') }}</a></li>
+            <li><a href="#success">{{ __('messages.success') }}</a></li>
+
+            <li><a href="#services">{{ __('messages.services') }}</a></li>
+            {{-- <li><a href="#team">{{ __('messages.team') }}</a></li> --}}
             <li><a href="#contact">{{ __('messages.contact') }}</a></li>
         
             <!-- Language Switcher: Show Arabic if in English & Show English if in Arabic -->
@@ -181,13 +183,13 @@
     </div>
     </section>
     <!-- ======= Steps Section ======= -->
-    <section id="steps" class="steps">
+    <section id="success" class="steps">
       <div class="container">
 
         <div class="row no-gutters {{ app()->getLocale() == 'ar' ? 'text-right' : 'text-left' }}">
-          <h1 class="col-md-12 text-center">{{ __('messages.success_stories') }}</h1>
-          @foreach ($successStories as $story)
-          <div class="col-lg-6 col-md-6 content-item" data-aos="fade-in" data-aos-delay="100">
+          <h1 class="col-md-12 text-center" style="margin-bottom: 25px;">{{ __('messages.success_stories') }}</h1>
+          @foreach ($successStories as $i => $story)
+          <div class="col-lg-6 col-md-6 content-item" style="{{ $i % 2 == 0 && app()->getLocale() == 'ar' ? 'border-left: 1px solid #d4e9e6;' : '' }} {{ $i % 2 == 0 && app()->getLocale() == 'en' ? 'border-right: 1px solid #d4e9e6;' : '' }} " data-aos="fade-in" data-aos-delay="100">
             <span><img src="{{$story->logo}}" style="margin: auto; display: block;"></span>
             <h4>{{ $locale == 'ar' ? $story->name_ar : $story->name_en }}</h4>
             <p>{{ $locale == 'ar' ? $story->description_ar : $story->description_en }}</p>
@@ -570,21 +572,21 @@
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <h4>{{ __('messages.Location:') }} </h4>
-                <p>2499, Jeddah 21451, Kingdom of Saudi Arabia</p>
+                <h4 class="{{ app()->getLocale() == 'ar' ? 'text-right' : '' }}">{{ __('messages.Location') }} :</h4>
+                <p class="{{ app()->getLocale() == 'ar' ? 'text-right' : '' }}">{{ app()->getLocale() == 'ar' ? $contact->location_ar : $contact->location_en }}</p>
               </div>
 
               <div class="email mt-4">
                 <i class="icofont-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@tzamun.sa</p>
+                <h4 class="{{ app()->getLocale() == 'ar' ? 'text-right' : '' }}">{{ __('messages.Email') }} :</h4>
+                <p class="{{ app()->getLocale() == 'ar' ? 'text-right' : '' }}" style="direction: ltr;">{{$contact->email}}</p>
               </div>
 
               <div class="phone mt-4">
                 <i class="icofont-phone"></i>
-                <h4>Call:</h4>
-                <p>+966126972323</p>
-                <p> +966569756185</p>
+                <h4 class="{{ app()->getLocale() == 'ar' ? 'text-right' : '' }}">{{ __('messages.Call') }}:</h4>
+                <p class="{{ app()->getLocale() == 'ar' ? 'text-right' : '' }}" style="direction: ltr;">{{$contact->phone_1}}</p>
+                <p class="{{ app()->getLocale() == 'ar' ? 'text-right' : '' }}" style="direction: ltr;"> {{$contact->phone_2}}</p>
               </div>
 
             </div>
@@ -603,21 +605,21 @@
             <form action="contact-us" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="{{ __('messages.your_name') }}" data-rule="minlen:4" data-msg="{{ __('messages.min_4') }}" />
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="email" id="email" placeholder="{{ __('messages.your_email') }}" data-rule="email" data-msg="{{ __('messages.valid_mail') }}" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="subject" class="form-control" id="subject" placeholder="{{ __('messages.subject') }}" data-rule="minlen:4" data-msg="{{ __('messages.min_4') }}" />
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:9" data-msg="Please enter at least 9 chars of numbers" />
+                <input type="text" class="form-control" name="phone" id="phone" placeholder="{{ __('messages.your_phone') }}" data-rule="minlen:9" data-msg="{{ __('messages.min_9_num') }}" />
                   <div class="validate"></div>
                 </div>
               </div>
@@ -625,15 +627,15 @@
 
 
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="{{ __('messages.write_4_us') }}" placeholder="{{ __('messages.message') }}"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
-                <div class="loading">Loading</div>
+                <div class="loading">{{ __('messages.loading') }}</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message">{{ __('messages.message_sent_thanks') }}</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">{{ __('messages.send_message') }}</button></div>
             </form>
           </div>
 
@@ -646,18 +648,16 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
+    <div class="footer-top {{ app()->getLocale() == 'ar' ? 'text-right' : 'text-left' }}">
       <div class="container">
         <div class="row">
 
           <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>TZAMUN</h3>
-              <p>
-              2499, Jeddah 21451 <br>
-              Kingdom of Saudi Arabia<br><br>
-                <strong>Phone:</strong> +966126972323 - +966569756185<br>
-                <strong>Email:</strong> info@tzamun.sa<br>
+            <div class="footer-info" style="{{ app()->getLocale() == 'ar' ? 'padding-left: 20%;' : 'padding-right: 20%;' }} ">
+              <h3>{{ __('messages.tzamun') }}</h3>
+              <p><strong>{{ __('messages.Location') }}:</strong> {{ app()->getLocale() == 'ar' ? $contact->location_ar : $contact->location_en }}<br>
+                <strong>{{ __('messages.Call') }}:</strong> {{$contact->phone_1}} - {{$contact->phone_2}}<br>
+                <strong>{{ __('messages.email') }}:</strong> {{$contact->email}}<br>
               </p>
               <!-- <div class="social-links mt-3">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -669,25 +669,26 @@
             </div>
           </div>
 
+
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{ __('messages.home') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">{{ __('messages.about_us') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">{{ __('messages.partners') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#success">{{ __('messages.success') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">{{ __('messages.services') }}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">{{ __('messages.contact') }}</a></li>
+
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>{{ __('messages.services') }}</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              @foreach ($services as $i=>$service)
+                <li><i class="bx bx-chevron-right"></i> <a href="#services">{{ $locale == 'ar' ? $service->title_ar : $service->title_en }}</a></li>
+              @endforeach
+
             </ul>
           </div>
 
@@ -695,7 +696,7 @@
             <!-- <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p> -->
             <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+              <input type="email" name="email"><input type="submit" value="{{ __('messages.subscribe') }}">
             </form>
 
           </div> 
@@ -706,7 +707,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>tzamun</span></strong>. All Rights Reserved
+        &copy; {{ __('messages.copy_right') }}
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

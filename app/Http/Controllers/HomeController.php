@@ -14,7 +14,8 @@ class HomeController extends Controller
         $partners = \App\Models\Partner::all(); // Fetch the first About Us section
         $successStories = \App\Models\SuccessStory::all(); // Fetch the first About Us section
         $services = \App\Models\Service::all(); // Fetch the first About Us section
+        $contact = \App\Models\ContactInfo::first(); // Fetch the first About Us section
 
-        return view('home' , compact('hero', 'locale','about','partners','successStories','services')); // Make sure home.blade.php exists in resources/views/
+        return view('home' , compact('hero', 'locale','about','partners','successStories','services','contact')); // Make sure home.blade.php exists in resources/views/
     }
 }
