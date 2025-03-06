@@ -136,7 +136,7 @@
             <div class="col-lg-7">
                 <div id="trustedcustomers" runat="server" class="section-title text-center pb-25">
 
-                    <h3 class="title" style="color:#005e9c;font-weight:900"></h3><h3 class="title" style="color:#005e9c;font-weight:900">Our Partners</h3>
+                    <h3 class="title" style="color:#005e9c;font-weight:900"></h3><h3 class="title" style="color:#005e9c;font-weight:900">{{ __('messages.partners') }}</h3>
 
 
                 </div>
@@ -150,7 +150,7 @@
                         <div class="row d-flex flex-wrap p-5">
                           @foreach ($partners as $i=> $partner)
                           @if ($i>3)
-                            <div class="col-6 col-md-3 {{ $partner->name_en !== 'estool' ? 'p-5' : 'estool' }}"><img src="{{ asset('storage/' . $partner->logo) }}"  class="d-block w-100"></div>
+                            <div class="col-6 col-md-3 {{ $partner->name_en !== 'estool' ? 'p-5' : (app()->getLocale() == 'ar' ? 'estool_ar' : 'estool_en') }}"><img src="{{ asset('storage/' . $partner->logo) }}"  class="d-block w-100"></div>
                           @endif
                           @endforeach
                         </div>
@@ -159,7 +159,7 @@
                         <div class="row d-flex flex-wrap p-5">
                           @foreach ($partners as $i=> $partner)
                           @if ($i<4)
-                            <div class="col-6 col-md-3 p-5 {{ $partner->name_en !== 'estool' ? 'p-5' : 'estool' }}"><img src="{{ asset('storage/' . $partner->logo) }}"  class="d-block w-100"></div>
+                            <div class="col-6 col-md-3 p-5 {{ $partner->name_en !== 'estool' ? 'p-5' : (app()->getLocale() == 'ar' ? 'estool_ar' : 'estool_en') }}"><img src="{{ asset('storage/' . $partner->logo) }}"  class="d-block w-100"></div>
                           @endif
                           @endforeach
                           

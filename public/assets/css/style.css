@@ -1569,10 +1569,10 @@ section {
 .carousel-control-next{
   right: -10% ;
 }
-.estool{
+.estool_en , .estool_ar{
   padding-top:11%!important;
 }
-.estool img{
+.estool_en img , .estool_ar img{
   width: 140% !important;
 
 }
@@ -1585,8 +1585,21 @@ section {
 .carousel-control-next {
   right: 0% !important;
 }
-.estool{
+.estool_ar{
   padding-top:20%!important;
+  padding-right: 0px !important;
+  right: -20px;
+}
+.estool_en{
+  padding-top:20%!important;
+  padding-left: 0px !important;
+  left: -20px;
+}
+.estool_en img{
+  width: 160% !important;
+}
+.estool_ar img{
+  width: 160% !important;
 }
 }
 
