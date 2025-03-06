@@ -150,7 +150,7 @@
                         <div class="row d-flex flex-wrap p-5">
                           @foreach ($partners as $i=> $partner)
                           @if ($i>3)
-                            <div class="col-6 col-md-3 p-5"><img src="{{ asset('storage/' . $partner->logo) }}"  class="d-block w-100"></div>
+                            <div class="col-6 col-md-3 {{ $partner->name_en !== 'estool' ? 'p-5' : '' }}"><img src="{{ asset('storage/' . $partner->logo) }}"  class="d-block w-100"></div>
                           @endif
                           @endforeach
                         </div>
@@ -159,7 +159,7 @@
                         <div class="row d-flex flex-wrap p-5">
                           @foreach ($partners as $i=> $partner)
                           @if ($i<4)
-                            <div class="col-6 col-md-3 p-5"><img src="{{ asset('storage/' . $partner->logo) }}"  class="d-block w-100"></div>
+                            <div class="col-6 col-md-3 p-5 {{ $partner->name_en !== 'estool' ? 'p-5' : 'estool' }}"><img src="{{ asset('storage/' . $partner->logo) }}"  class="d-block w-100"></div>
                           @endif
                           @endforeach
                           

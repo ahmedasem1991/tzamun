@@ -1560,3 +1560,27 @@ section {
     }
 }
 
+.carousel-control-next-icon , .carousel-control-prev-icon{
+  filter: invert(100%); /* Turns the white arrow into black */
+}
+.carousel-control-prev{
+  left: -10% ;
+}
+.estool{
+  padding-top:11%!important;
+}
+.estool img{
+  width: 140% !important;
+
+}
+
+
+@media (max-width: 768px) {
+  .carousel-control-prev {
+    left: 0% !important;
+}
+.estool{
+  padding-top:20%!important;
+}
+}
+
