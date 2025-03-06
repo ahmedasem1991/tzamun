@@ -1566,6 +1566,9 @@ section {
 .carousel-control-prev{
   left: -10% ;
 }
+.carousel-control-next{
+  right: -10% ;
+}
 .estool{
   padding-top:11%!important;
 }
@@ -1578,6 +1581,9 @@ section {
 @media (max-width: 768px) {
   .carousel-control-prev {
     left: 0% !important;
+}
+.carousel-control-next {
+  right: 0% !important;
 }
 .estool{
   padding-top:20%!important;
