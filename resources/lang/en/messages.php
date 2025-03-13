@@ -16,6 +16,7 @@ return [
     'email' => 'Email',
     'phone' => 'Phone Number',
     'Location' => 'Location',
+    'address' => 'Address',
     'success' => 'Success Stories',
     'Email' => 'Email',
     'Call' => 'Call',
@@ -32,8 +33,13 @@ return [
     'message_sent_thanks'=>'Your message has been sent. Thank you!',
     'send_message'=>'Send Message',
     'tzamun'=>'TZAMUN',
+    'pages'=>'Pages',
+    'follow-us'=>'Follow Us',
     'subscribe' => 'Subscribe',
     'copy_right'=> '© Copyright tzamun. All Rights Reserved',
-    'contact_success' => 'Your message has been sent successfully.'
+    'contact_success' => 'Your message has been sent successfully.',
+    "discuss_project"=>"Let's Discuss your Projects",
+    "discuss_project_desc"=>"We pride ourselves with our ability to perform and deliver results. Use the form below to discuss your project needs with our team, we will get back asap",
+
 
 ];
