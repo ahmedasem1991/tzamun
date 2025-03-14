@@ -927,7 +927,7 @@
                         </div>
                       </div>
                       <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-                      <div class="col-md-12">
+                      <div class="col-md-12 mt-2">
                         <button type="submit" data-text="Send Message">{{ __('messages.send_message') }}</button>
                       </div>
                       <div class="messages">
