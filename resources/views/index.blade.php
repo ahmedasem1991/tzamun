@@ -126,44 +126,29 @@
                     </div>
                   </div>
                 @endforeach
-{{--               
-                <!--End Icon Box -->
+               
+                {{-- <!--End Icon Box -->
       
                 <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
                   <div class="icon-box">
-                    <div class="icon"><img src="assets/images/icons/service-hosting.svg" alt="icon"></div>
+                    <div class="icon"><i class="bx bx-server"></i></div>
                     <h4 class="title"><a href="" class="stretched-link">Web Hosting</a></h4>
-                    <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Hassle-free web hosting with powerful performance and unlimited possibilities.</p>
                   </div>
                 </div>
                 <!--End Icon Box -->
       
-                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="500">
-                  <div class="icon-box">
-                    <div class="icon"><img src="assets/images/icons/service-social.svg" alt="icon"></div>
-                    <h4 class="title"><a href="" class="stretched-link">Social Media</a></h4>
-                    <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-                </div>
-                <!--End Icon Box --> --}}
-      
-                <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="100">
-                  <div class="icon-box">
-                    <div class="icon"><img src="assets/images/icons/service-seo.svg" alt="icon"></div>
-                    <h4 class="title"><a href="" class="stretched-link">SEO Optimization</a></h4>
-                    <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-                </div>
-                <!--End Icon Box -->
+                
+          
       
       
                 <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="200">
                   <div class="icon-box">
-                    <div class="icon"><img src="assets/images/icons/service-cloud.svg" alt="icon"></div>
+                    <div class="icon"><i class="bx bx-cloud-download"></i></div>
                     <h4 class="title"><a href="" class="stretched-link">Cloud Server</a></h4>
-                    <p>Ronsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Reliable, scalable, and secure cloud server solutions tailored for your business needs.</p>
                   </div>
-                </div>
+                </div> --}}
                 <!--End Icon Box -->
       
 {{--       
@@ -542,7 +527,7 @@
         </div>
       </div>
     </section>
-    <!-- End Testimonials Section --> --}}
+    <!-- End Testimonials Section --> 
 
     <!--  Start Counter Section  -->
     <div id="stats-counter" class="call-to-action stats-counter section">
@@ -936,6 +921,7 @@
                           <div class="help-block with-errors"></div>
                         </div>
                       </div>
+                      <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                       <div class="col-md-12">
                         <button type="submit" data-text="Send Message">{{ __('messages.send_message') }}</button>
                       </div>
@@ -1075,6 +1061,7 @@
   <script src="assets/javascripts/contactform.js"></script>
   <script src="assets/javascripts/particles.min.js"></script>
   <script src="assets/javascripts/script.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <!-- Template Main JS File -->
   <script src="assets/javascripts/main.js"></script>

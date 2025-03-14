@@ -1008,7 +1008,7 @@ section {background: var(--light-color);}
 
 .clients .swiper-slide img {
   transition: 0.3s;
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   opacity: 1;
   border-radius: 8px;
 }
