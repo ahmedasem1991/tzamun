@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Technoit - IT Solutions & Business Services Multipurpose Responsive Website Template</title>
+  <title>Tzamun</title>
   <meta content="" name="Technoit - IT Solutions & Business Services Multipurpose Responsive Website Template">
   <meta name="description" content="Technoit - IT Solutions & Business Services Multipurpose Responsive Website Template">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta content="" name="ZRTHEMES">
 
   <!-- Favicons -->
-  <link href="assets/images/favicon.png" rel="icon">
-  <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://tzamun.sa/assets/images/favicon.png" rel="icon">
+  <link href="https://tzamun.sa/assets/images/favicon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
