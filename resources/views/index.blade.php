@@ -531,7 +531,9 @@
     </section>
     <!-- End Testimonials Section --> 
 
+
     <!--  Start Counter Section  -->
+    @if($settings && $settings->show_analysis_section)
     <div id="stats-counter" class="call-to-action stats-counter section">
       <div class="container" data-aos="fade-up">
         <div class="row gy-4 align-items-center">
@@ -559,6 +561,7 @@
         </div>
       </div>
     </div>
+    @endif
     <!--  End Counter Section  -->
 
     <!--  Clients Section  -->
