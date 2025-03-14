@@ -3572,3 +3572,7 @@ canvas{
 .text-right{
   text-align: right !important;
 }
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: 0px !important;
+
+}

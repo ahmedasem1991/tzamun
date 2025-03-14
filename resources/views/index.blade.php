@@ -93,10 +93,12 @@
           <h2 data-aos="fade-up">{{ $locale == 'ar' ? $hero->title_ar : $hero->title_en }}</span></h2>
           <p data-aos="fade-up" data-aos-delay="400">{{ $locale == 'ar' ? $hero->description_ar : $hero->description_en }}</p>
           <div class="social" data-aos="fade-up" data-aos-delay="600">
-            <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
+            @foreach($social_links as $link)
+                <a href="{{ $link->url }}"><i class="{{ $link->icon }}"></i></a>
+            @endforeach
+            {{-- <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-linkedin"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a> --}}
           </div>
           <div class="d-flex justify-content-start">
             <a href="#services" class="btn-get-started" data-aos="fade-up" data-aos-delay="1000">{{ __('messages.get_started') }}</a>
@@ -962,10 +964,10 @@
                         </div> --}}
                         <div class="footer-social-icon">
                             <span>{{ __('messages.follow-us') }}</span>
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                            @foreach($social_links as $link)
+                                <a href="{{ $link->url }}" class="{{ $link->name }}"><i class="{{ $link->icon }}"></i></a>
+                            @endforeach
+                          
                         </div>
                     </div>
                 </div>
