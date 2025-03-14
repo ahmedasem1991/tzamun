@@ -5,8 +5,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Tzamun</title>
-  <meta content="" name="Technoit - IT Solutions & Business Services">
-  <meta name="description" content="Technoit - IT Solutions & Business Services">
+  <meta content="" name="Tzamun - IT Solutions & Business Services">
+  <meta name="description" content="Tzamun - IT Solutions & Business Services">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta content="" name="ZRTHEMES">
 
