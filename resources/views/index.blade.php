@@ -48,7 +48,8 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="{{ asset('storage/logo-black.png') }}" alt="logo" class="logo-default">
-        <img src="https://tzamun.sa/assets/images/logo.png" alt="logo" class="logo-sticky">
+        
+        <img src="{{ asset('storage/tzamun-logo.png') }}" alt="logo" class="logo-sticky">
       </a>
       <nav id="navbar" class="navbar">
         <ul class="{{ app()->getLocale() == 'ar' ? 'rtl-nav' : 'ltr-nav' }}">
