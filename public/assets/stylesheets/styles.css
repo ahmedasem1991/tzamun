@@ -11,11 +11,11 @@
 
 :root {
   --font-default:
-  'Calibri','Poppins', sans-serif;
+  'Carlito','Noto Sans Arabic', 'sans-serif';
   --font-primary:
-  'Calibri','Poppins', sans-serif;
+  'Carlito','Noto Sans Arabic', 'sans-serif';
   --font-secondary:
-  'Calibri','Poppins', sans-serif;
+  'Carlito','Noto Sans Arabic', 'sans-serif';
   scroll-behavior: smooth;
   --color-bg: #025add;
   --hero-overlay-color: transparent;
