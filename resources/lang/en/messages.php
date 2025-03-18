@@ -33,7 +33,7 @@ return [
     'message_sent_thanks'=>'Your message has been sent. Thank you!',
     'send_message'=>'Send Message',
     'tzamun'=>'TZAMUN',
-    'pages'=>'Pages',
+    'Pages'=>'Pages',
     'follow-us'=>'Follow Us',
     'subscribe' => 'Subscribe',
     'copy_right'=> '© Copyright tzamun. All Rights Reserved',

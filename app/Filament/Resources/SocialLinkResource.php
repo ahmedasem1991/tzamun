@@ -32,6 +32,7 @@ class SocialLinkResource extends Resource
                 ->options([
                     'bx bxl-facebook' => 'Facebook',
                     'bx bxl-twitter' => 'Twitter',
+                    'fa-brands fa-x-twitter' => 'X',
                     'bx bxl-instagram' => 'Instagram',
                     'bx bxl-linkedin' => 'LinkedIn',
                     'bx bxl-github' => 'GitHub',

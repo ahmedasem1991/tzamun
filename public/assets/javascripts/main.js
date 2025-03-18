@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const headerFixed = () => {
       if ((headerOffset - window.scrollY) <= 0) {
-        selectHeader.classList.add('sticked');
+        // selectHeader.classList.add('sticked');
         if (nextElement) nextElement.classList.add('sticked-header-offset');
       } else {
         selectHeader.classList.remove('sticked');

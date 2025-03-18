@@ -28,6 +28,8 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="old_assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 
   <!-- Main CSS File -->
   <link href="assets/stylesheets/styles.css" rel="stylesheet">
@@ -37,10 +39,15 @@
 
 <body>
 
-  <header id="header" class="header d-flex align-items-center sticked stikcy-menu">
+  <header id="header" class="header d-flex align-items-center sticked stikcy-menu" style="position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 90px;">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="https://tzamun.sa/assets/images/logo.png" alt="logo">
+        <img src="{{ asset('storage/logo-black.png') }}" alt="logo" class="logo-default">
+        <img src="https://tzamun.sa/assets/images/logo.png" alt="logo" class="logo-sticky">
       </a>
       <nav id="navbar" class="navbar">
         <ul class="{{ app()->getLocale() == 'ar' ? 'rtl-nav' : 'ltr-nav' }}">
@@ -122,7 +129,7 @@
                 @foreach ($services as $service)
                 <div class="col-xl-4 col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-box">
-                      <div class="icon"><i class="{{ $service->icon }}"></i></div>
+                      <div class="icon service-icon"><i class="{{ $service->icon }}"></i></div>
                       <h4 class="title"><a href="" class="stretched-link">{{ $locale == 'ar' ? $service->title_ar : $service->title_en }}</a></h4>
                       <p>{{ $locale == 'ar' ? $service->description_ar : $service->description_en }}</p>
                     </div>
@@ -525,7 +532,7 @@
               </div>
             </div><!-- End testimonial item -->
           </div> --}}
-          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination" style="display: none;"></div>
         </div>
       </div>
     </section>
@@ -958,7 +965,7 @@
                     <div class="footer-widget">
                         <div class="footer-logo">
                             <a href="index.html" class="logo d-flex align-items-center">
-                              <img src="https://tzamun.sa/assets/images/logo.png" alt="{{ __('messages.tzamun') }}">
+                              <img src="{{ asset('storage/logo-black.png') }}" alt="{{ __('messages.tzamun') }}">
                             </a>
                         </div>
                         {{-- <div class="footer-text">
@@ -982,7 +989,7 @@
                         </div>
                           <ul class="list">
                             @foreach ($services as $service)
-                            <li><a href="#services">{{ $locale == 'ar' ? $service->title_ar : $service->title_en }}</a></li>
+                            <li><a href="#services" class="service_logo">{{ $locale == 'ar' ? $service->title_ar : $service->title_en }}</a></li>
                             @endforeach
                             
                           </ul>
@@ -1070,7 +1077,28 @@
 
   <!-- Template Main JS File -->
   <script src="assets/javascripts/main.js"></script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var header = document.getElementById("header");
+    
+        // Function to toggle sticky class
+        function toggleSticky() {
+          console.log(window.scrollY);
+            if (window.scrollY > 50) {
+                header.classList.add("sticked");
+            } else {
+                header.classList.remove("sticked");
+            }
+        }
+    
+        // Run once on page load
+        toggleSticky();
+    
+        // Run on scroll
+        window.addEventListener("scroll", toggleSticky);
+    });
+    </script>
+    
 
 
 </body></html>

@@ -11,11 +11,11 @@
 
 :root {
   --font-default:
-  'Poppins', sans-serif;
+  'Calibri','Poppins', sans-serif;
   --font-primary:
-  'Poppins', sans-serif;
+  'Calibri','Poppins', sans-serif;
   --font-secondary:
-  'Poppins', sans-serif;
+  'Calibri','Poppins', sans-serif;
   scroll-behavior: smooth;
   --color-bg: #025add;
   --hero-overlay-color: transparent;
@@ -30,8 +30,8 @@
   --text-theme-color: #025add;
   --light-color: #ffffff;
   --color-default: #3a3a3a;
-  --color-primary: #025add;
-  --color-secondary: #0c6de0;
+  --color-primary: #0E71AD;
+  --color-secondary: #38B396;
   --color-start: #3a3a3a;
   --color-end: #3a3a3a;
   --hero-card-bg: rgb(228 227 223 / 17%);
@@ -187,12 +187,12 @@ section {
 .section-header h2 {
   font-size: 32px;
   position: relative;
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .section-header p {
   margin-bottom: 0;
-  color: #b8651d;
+  color: var(--color-primary);
 }
 
 img {
@@ -3575,4 +3575,29 @@ canvas{
 .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
   bottom: 0px !important;
 
+}
+
+
+.logo img {
+  height: 50px; /* Adjust as needed */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.logo-sticky {
+  display: inline-block;
+}
+
+.logo-sticky {
+  display: none;
+}
+
+.sticked .logo-default {
+  display: none;
+}
+
+.sticked .logo-sticky {
+  display: inline-block;
+}
+.icon.service-icon {
+  color: #38B396;
 }
