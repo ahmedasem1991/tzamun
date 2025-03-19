@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
   <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -866,7 +866,7 @@
             <div class="contact-information-box-3">
               <div class="row">
                 <div class="col-lg-12">
-                  <div class="single-contact-info-box">
+                  <div class="single-contact-info-box {{ app()->getLocale() == 'ar' ? 'text-right' : '' }}">
                     <div class="contact-info">
                       <h6>{{ __('messages.address') }}:</h6>
                       <p>{{ app()->getLocale() == 'ar' ? $contact->location_ar : $contact->location_en }}</p>
@@ -874,7 +874,7 @@
                   </div>
                 </div>
                 <div class="col-lg-12">
-                  <div class="single-contact-info-box">
+                  <div class="single-contact-info-box {{ app()->getLocale() == 'ar' ? 'text-right' : '' }}">
                     <div class="contact-info">
                       <h6>{{ __('messages.Call') }}:</h6>
                       <p>{{$contact->phone_1}} </p>
@@ -883,7 +883,7 @@
                   </div>
                 </div>
                 <div class="col-lg-12">
-                  <div class="single-contact-info-box">
+                  <div class="single-contact-info-box {{ app()->getLocale() == 'ar' ? 'text-right' : '' }}">
                     <div class="contact-info">
                       <h6>{{ __('messages.email') }}:</h6>
                       <p>{{$contact->email}}</p>
