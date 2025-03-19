@@ -46,9 +46,9 @@
     left: 0;
     height: 90px;">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center">
         <img src="{{ asset('storage/logo-black.png') }}" alt="logo" class="logo-default">
-        
+
         <img src="{{ asset('storage/tzamun-logo.png') }}" alt="logo" class="logo-sticky">
       </a>
       <nav id="navbar" class="navbar">
@@ -966,7 +966,7 @@
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                            <a href="index.html" class="logo d-flex align-items-center">
+                            <a href="/" class="logo d-flex align-items-center">
                               <img src="{{ asset('storage/logo-black.png') }}" alt="{{ __('messages.tzamun') }}">
                             </a>
                         </div>
