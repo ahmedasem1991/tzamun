@@ -11,8 +11,8 @@
   <meta content="" name="ZRTHEMES">
 
   <!-- Favicons -->
-  <link href="https://tzamun.sa/assets/images/favicon.png" rel="icon">
-  <link href="https://tzamun.sa/assets/images/favicon.png" rel="apple-touch-icon">
+  <link href="https://tzamun.sa/storage/tzamun-logo.png" rel="icon">
+  <link href="https://tzamun.sa/storage/tzamun-logo.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
