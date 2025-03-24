@@ -173,7 +173,7 @@
               <div class="col-md-4 p-4 p-sm-5 center">
                 <div class="list-center-wrap" data-aos="fade-up" data-aos-delay="100">
                   <div class="center-icon">
-                    <img src={{ !empty($about->logo) ? asset($about->logo) : asset('assets/images/features.jpg') }} alt="icon">
+                    <img src={{ !empty($about->logo) ? asset('storage/'$about->logo) : asset('images/features.jpg') }} alt="icon">
 
                   </div>
                 </div>
