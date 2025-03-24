@@ -53,35 +53,26 @@
       </a>
       <nav id="navbar" class="navbar">
         <ul class="{{ app()->getLocale() == 'ar' ? 'rtl-nav' : 'ltr-nav' }}">
-            <li class="active"><a href="#">{{ __('messages.home') }}</a></li>
-            <li><a href="#services">{{ __('messages.services') }}</a></li>
-            <li><a href="#featured">{{ __('messages.about_us') }}</a></li>
+            <li class="active"><a href="#"><i class="menu-logo bi bi-house"></i> {{ __('messages.home') }}</a></li>
+            <li><a href="#services"><i class="menu-logo bi bi-tools"></i>{{ __('messages.services') }}</a></li>
+            <li><a href="#featured"><i class="menu-logo bi bi-person-lines-fill"></i>{{ __('messages.about_us') }}</a></li>
             {{-- <li><a href="#success">{{ __('messages.success') }}</a></li> --}}
-            <li><a href="#partners">{{ __('messages.partners') }}</a></li>
-            <li><a href="#contact">{{ __('messages.contact') }}</a></li>
+            <li><a href="#partners"><i class="menu-logo bi bi-people"></i>{{ __('messages.partners') }}</a></li>
+            <li><a href="#contact"><i class="menu-logo bi bi-envelope"></i>{{ __('messages.contact') }}</a></li>
             @if(app()->getLocale() == 'en')
-            <li><a href="{{ route('switch-language', 'ar') }}">العربية</a></li>
+            <li><a href="{{ route('switch-language', 'ar') }}"><i class="menu-logo bi bi-translate"></i>العربية</a></li>
         @else
-            <li><a href="{{ route('switch-language', 'en') }}">English</a></li>
+            <li><a href="{{ route('switch-language', 'en') }}"><i class="menu-logo bi bi-translate"></i>English</a></li>
         @endif
-          {{-- <li><a href="index.html" class="">Home</a></li>
-          <li><a href="services.html" class="">Services</a></li>
-          <li><a href="portfolio.html" class="">Portfolio</a></li>
-          <li><a href="testimonials.html" class="">Testimonials</a></li>
-          <li><a href="team.html" class="">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="packages.html">Pricing</a></li>
-              <li><a href="faqs.html">FAQs</a></li>
-              <li><a href="privacy-policy.html">Terms &amp; Conditions</a></li>
-              <li><a href="privacy-policy.html">Privacy Policy</a></li>
-              <li><a href="blogs.html">Blogs</a></li>
-              <li><a href="blog-details.html">Blog Detail Page</a></li>
-            </ul>
-          </li>
-          <li><a href="blogs.html">News</a></li> --}}
+            <li class="menu-social">
+              <span class="follow-menu">{{ __('messages.follow-us') }}</span>
+              @foreach($social_links as $link)
+                  <a href="{{ $link->url }}"><i class="{{ $link->icon }}"></i></a>
+              @endforeach
+            </li>
         </ul>
+     
+     
       </nav><!-- .navbar -->
       {{-- <a href="contact.html" class="btn-get-started hide-on-mobile">Get Quotes</a> --}}
       <button id="darkmode-button"><i class="bi bi-moon-fill"></i></button>
@@ -187,14 +178,14 @@
               </div>
           <div class="row">
             <!-- start  left -->
-            <div class="col-md-4 p-5 p-sm-5 left">
+            <div class="col-md-4 p-5 p-sm-5 ">
               <div class="list-wrap" data-aos="fade-up" data-aos-delay="100">
                 <div class="description">
                   <h4>{{ $locale == 'ar' ? $about->vision_ar : $about->vision_en }}</h4>
                   <p>{{ $locale == 'ar' ? $about->vision_description_ar : $about->vision_description_en }}</p>
                 </div>
                   <div class="icon">
-                    <img src="assets/images/icons/icon-2.svg" alt="icon">
+                    {{-- <img src="assets/images/icons/icon-2.svg" alt="icon"> --}}
                   </div>
               </div>
               
@@ -225,16 +216,17 @@
             <div class="col-md-4 p-4 p-sm-5 center">
               <div class="list-center-wrap" data-aos="fade-up" data-aos-delay="100">
                 <div class="center-icon">
-                  <img src="assets/images/features.jpg" alt="icon">
+                  <img src={{ !empty($about->logo) ? asset($about->logo) : asset('assets/images/features.jpg') }} alt="icon">
+
                 </div>
               </div>
             </div>
             <!-- end  center -->
             <!-- start  right -->
-            <div class="col-md-4 p-5 p-sm-5 right">
+            <div class="col-md-4 p-5 p-sm-5 ">
               <div class="list-wrap" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon">
-                  <img src="assets/images/icons/icon-1.svg" alt="icon">
+                  {{-- <img src="assets/images/icons/icon-1.svg" alt="icon"> --}}
                 </div>
                 <div class="description">
                   <h4>{{ $locale == 'ar' ? $about->mission_ar : $about->mission_en }} </h4>

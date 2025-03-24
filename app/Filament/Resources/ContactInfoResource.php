@@ -71,4 +71,13 @@ class ContactInfoResource extends Resource
             'edit' => Pages\EditContactInfo::route('/{record}/edit'),
         ];
     }
+    public static function getModelLabel(): string
+    {
+        return 'بيان';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'بيانات الاتصال';
+    }
 }

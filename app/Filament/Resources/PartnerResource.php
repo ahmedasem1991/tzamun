@@ -82,4 +82,13 @@ class PartnerResource extends Resource
             'edit' => Pages\EditPartner::route('/{record}/edit'),
         ];
     }
+    public static function getModelLabel(): string
+    {
+        return 'شريك';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'الشركاء';
+    }
 }

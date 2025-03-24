@@ -100,4 +100,13 @@ class SocialLinkResource extends Resource
             'edit' => Pages\EditSocialLink::route('/{record}/edit'),
         ];
     }
+    public static function getModelLabel(): string
+    {
+        return 'قناة تواصل';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'قنوات التواصل';
+    }
 }

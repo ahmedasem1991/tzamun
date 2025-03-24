@@ -76,4 +76,13 @@ class SuccessStoryResource extends Resource
             'edit' => Pages\EditSuccessStory::route('/{record}/edit'),
         ];
     }
+    public static function getModelLabel(): string
+    {
+        return 'رآي العميل';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'اراء العملاء';
+    }
 }

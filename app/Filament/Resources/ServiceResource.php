@@ -70,4 +70,13 @@ class ServiceResource extends Resource
             'edit' => Pages\EditService::route('/{record}/edit'),
         ];
     }
+    public static function getModelLabel(): string
+    {
+        return 'خدمة';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'الخدمات';
+    }
 }

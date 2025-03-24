@@ -65,4 +65,13 @@ class SettingResource extends Resource
             'edit' => Pages\EditSetting::route('/{record}/edit'),
         ];
     }
+    public static function getModelLabel(): string
+    {
+        return 'اعداد';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'الاعدادات';
+    }
 }

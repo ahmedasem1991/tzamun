@@ -60,7 +60,14 @@
   --hero-card-bg: rgb(0 0 0 / 83%);
   --box-shadow-color: rgb(20 146 154 / 49%);
 }
-
+.mobile-nav-toggle {
+  color: white !important;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.form-control {
+  color: black !important;
+}
 body {
   font-family: var(--font-default);
   color: var(--text-color);
@@ -475,7 +482,12 @@ img:hover {
 .sticked-header-offset {
   margin-top: 0;
 }
-
+.menu-logo{
+  display: none;
+}
+.menu-social{
+  display: none;
+}
 section {background: var(--light-color);}
 
 /*--------------------------------------------------------------
@@ -621,6 +633,27 @@ section {background: var(--light-color);}
 # Mobile Navigation
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
+  .menu-social{
+    margin: 20px;    
+    display: flex;
+  }
+  .fa-x-twitter{
+    padding-top: 12px;
+    }
+  .menu-social a{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .follow-menu{
+    color: white;
+    padding: 10px;
+    font-weight: bolder;
+    font-style: oblique;
+  }
+  .menu-logo{
+    display: inline;
+    padding: 10px;
+  }
   .navbar {
     position: fixed;
     top: 0;
@@ -645,7 +678,7 @@ section {background: var(--light-color);}
 
   .navbar a,
   .navbar a:focus {
-    display: flex;
+    display: list-item;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
@@ -658,7 +691,7 @@ section {background: var(--light-color);}
 
   .navbar a i,
   .navbar a:focus i {
-    font-size: 12px;
+    font-size: 25px;
     line-height: 0;
     margin-left: 5px;
   }
@@ -1555,7 +1588,7 @@ section {background: var(--light-color);}
 .social i {
   font-size: 14px;
   margin: 0 2px;
-  color: var(--color-primary);
+  color: white;
 }
 .mr-20{
   margin-right: 20px !important;

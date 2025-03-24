@@ -71,4 +71,13 @@ class ContactUsResource extends Resource
             'edit' => Pages\EditContactUs::route('/{record}/edit'),
         ];
     }
+    public static function getModelLabel(): string
+    {
+        return 'نموذج';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'اتصل بنا';
+    }
 }

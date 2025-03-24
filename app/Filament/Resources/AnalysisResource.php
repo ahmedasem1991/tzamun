@@ -82,4 +82,13 @@ class AnalysisResource extends Resource
             'edit' => Pages\EditAnalysis::route('/{record}/edit'),
         ];
     }
+    public static function getModelLabel(): string
+    {
+        return 'احصاء';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'احصائيات';
+    }
 }

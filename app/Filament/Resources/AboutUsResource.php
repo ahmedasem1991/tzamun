@@ -42,7 +42,6 @@ class AboutUsResource extends Resource
                     ->label('About Us Logo')
                     ->image()
                     ->directory('about-logos') // Store in storage/app/public/about-logos
-                    ->required(),
             ]);
     }
 
@@ -81,5 +80,14 @@ class AboutUsResource extends Resource
             'create' => Pages\CreateAboutUs::route('/create'),
             'edit' => Pages\EditAboutUs::route('/{record}/edit'),
         ];
+    }
+    public static function getModelLabel(): string
+    {
+        return 'عنا';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'عنا';
     }
 }
