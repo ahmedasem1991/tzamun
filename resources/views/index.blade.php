@@ -77,7 +77,7 @@
             <li class="menu-social">
               <span class="follow-menu">{{ __('messages.follow-us') }}</span>
               @foreach($social_links as $link)
-                  <a href="{{ $link->url }}"><i class="{{ $link->icon }}"></i></a>
+                  <a class="follow-menu-nav" href="{{ $link->url }}"><i class="{{ $link->icon }}"></i></a>
               @endforeach
             </li>
         </ul>

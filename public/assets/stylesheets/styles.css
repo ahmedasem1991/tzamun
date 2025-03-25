@@ -637,7 +637,7 @@ section {background: var(--light-color);}
     margin: 20px;    
     display: flex;
   }
-  .fa-x-twitter{
+  .follow-menu-nav .fa-x-twitter{
     padding-top: 12px;
     }
   .menu-social a{
