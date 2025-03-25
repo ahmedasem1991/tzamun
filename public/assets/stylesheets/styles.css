@@ -61,9 +61,10 @@
   --box-shadow-color: rgb(20 146 154 / 49%);
 }
 .mobile-nav-toggle {
-  color: white !important;
-  border: 1px solid white;
-  border-radius: 5px;
+  color: #29414d !important;
+    border: 2px solid #29414d;
+    border-radius: 5px;
+    font-weight: bolder;
 }
 .form-control {
   color: black !important;
